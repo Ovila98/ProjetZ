@@ -1,0 +1,246 @@
+/* SALON INDIVIDUEL */
+#salon-wrapper{
+    padding-block: 16px;
+}
+.header-container{
+    width: 100%;
+}
+
+.salon-header{
+    position: relative;
+    width: 90%;
+    min-width: min(100%, 640px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 6vh;
+    margin: 0 auto 30px;
+    padding: 25px;
+    padding-block: min(2vh, 50px) min(2vh, 25px);
+}
+
+.salon-header::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 95%;
+    height: 1px;
+    background: white;
+}
+
+.salon-chat-link{
+    position: relative;
+    overflow: hidden;
+    color: #324b4d;
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.salon-chat-link:hover:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+
+.salon-header h2{
+    width: 100%;
+    margin: 0 auto;
+}
+.salon-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.salon-content h1{
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+}
+.popular-chats-view{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    gap: 3vw;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.all-chats-events{
+    width: 90%;
+    min-width: min(100%, 640px);
+}
+
+.tablinks{
+    width: 50%;
+    font-size: max(24px, 1.5vh);
+    font-weight: bold;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border: none;
+    height: max(50px, 4vh);
+}
+
+.tablinks:hover{
+    cursor: pointer;
+}
+
+.tablinks.active{
+    color: rgba(255, 255, 255, 1);
+}
+
+.tab-content-wrapper{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-y: hidden;
+    position: relative;
+}
+.tab-content{
+    position: relative;
+    flex-grow: 1;
+    margin-inline: 25px;
+    width: calc(100% - 50px);
+    overflow: hidden;
+    overscroll-behavior-block: contain;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    place-items: center;
+    gap: 2vmax;
+}
+
+#tab-links-search{
+    display:flex;
+    flex-direction: column;
+    top: 0;
+    z-index: 7;
+}
+ #tab-links-search.sticky{
+    position: fixed;
+    top: 64px;
+    width: 100%;
+ }
+
+ #tab-links-search.sticky + .tab-content-wrapper{
+     padding-top: calc(64px + 4rem);
+ }
+.chats-events-tab{
+    position: relative;
+}
+.chats-events-tab:before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    transition: all .35s ease;
+}
+
+.chats-events-tab.tab-events:before{
+    background-color: #00C9FF;
+    transform: translateX(0);
+}
+
+.chats-events-tab.tab-chats:before{
+    background-color: #92FE9D;
+    transform: translateX(100%);
+}
+
+.tab-search-wrapper{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    min-height: 4rem;
+    max-height: 4rem;
+    flex-direction: row-reverse;
+}
+.tab-search-container{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: min(90%, calc(500px + 3rem));
+    min-height: 100%;
+}
+#tab-search{
+    width: 100%;
+    height: 100%;
+    color: #333;
+    padding-left: 8px;
+    transform-origin: center top;
+    transform: scaleY(0);
+    transition: transform 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+
+#tab-search.active{
+    transform: scaleY(1); 
+}
+.tab-search-btn{
+    background-color: #333;
+    font-size: 2rem;
+    height: 100%;
+    aspect-ratio: 1;
+    border: none;
+}
+
+.tab-search-btn:hover{
+    cursor: pointer;
+}
+
+/* TOUS LES SALONS */
+
+.salons-wrapper{
+    width: 100%;
+    min-height: 100%;
+}
+
+.title-zone{
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    margin: 2vh auto 3vh;
+}
+
+.title-zone h1{
+    font-size: 3rem;
+}
+
+.salons-group-wrapper{
+    width: 75%;
+    margin: 48px auto 16px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 96px;
+    row-gap: 48px;
+    justify-content: center;
+    align-items: first baseline;
+    
+}
+
+#search-zone{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#search-box{
+    min-width: min(90%, calc(500px + 3rem));
+    position: relative;
+    height: 3rem;
+    overflow: hidden;
+}
+
+#search-box input{
+    height: 100%;
+    min-width: 100%;
+    padding-left: 8px;
+    color: #333;
+}

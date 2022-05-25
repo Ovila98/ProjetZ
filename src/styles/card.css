@@ -1,0 +1,87 @@
+.card-body{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    justify-content: flex-end;
+    aspect-ratio: 3 / 2;
+    border-radius: .5rem;
+    scroll-snap-align: start;
+    transition: transform .2s ease-in-out;
+    
+}
+
+.card-body::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,.4) 90%, rgba(0,0,0,1) 100%);
+    z-index: -1;
+}
+
+.card-body img{
+    position: absolute;
+    height: 100%;
+    width:  100%;
+    z-index: -2;
+}
+
+.card-content{
+    position: relative;
+    height: fit-content;
+    max-height: 50%;
+    z-index: 0;
+}
+
+.card-content h2{
+    width: 100%;
+    font-size: max(2vh, 1rem);
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.card-content h3{
+    font-size: .9rem;
+    display: inline;
+}
+
+.card-event-details{
+    position: absolute;
+    opacity: 0;
+    transition: opacity .2s ease-in .2s;
+}
+
+.card-event-details p{
+    padding: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-date-location{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+.card-body:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    z-index: 5;
+}
+
+.card-body:hover::before{
+    background: rgba(255,255,255,0);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,.7) 100%);
+}
+
+.card-body:hover .card-event-details{
+    position: static;
+    opacity: 1;
+}
+
+a{text-decoration: none}

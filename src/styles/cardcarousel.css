@@ -1,0 +1,58 @@
+.card-carousel-wrapper{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-block: 100px;
+}
+
+.salon-content .card-carousel-wrapper{
+    display: block;
+}
+.card-carousel-wrapper:first-child{
+    padding-block: 0 100px;
+
+}
+.card-carousel-title{
+    text-align: center;
+    font-size: max(3vh, 1.5rem);
+    width: fit-content;
+}
+
+
+.card-carousel-title:hover{
+    cursor: pointer;
+    opacity: .9;
+}
+.card-carousel{
+    padding: 15px 30px;
+    grid-column: span 3;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 30px;
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+}
+
+.card-carousel > *:not(:last-child){
+    scroll-snap-align: start;
+}
+
+.card-carousel > *:last-child{
+    scroll-snap-align: end;
+}
+
+.text-section{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    padding-inline: 20px;
+    min-width: 100%;
+    height: 100%;
+    grid-column: span 1;
+}
+
+.salon-content .card-carousel-wrapper{
+    display: block !important; 
+}
