@@ -31,6 +31,7 @@ function App() {
             <Routes>
 
               <Route exact path="/" element={<Home />} />
+              <Route exact path="/ProjetZ" element={<Home />} />
 
               <Route exact path="/chats" element={<Chats />} />
               <Route exact path="/chats/official/:id" element={<Chat />} />
